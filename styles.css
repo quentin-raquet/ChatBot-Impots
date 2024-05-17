@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+}
+#chat-container {
+    width: 600px;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+}
+.chat-entry {
+    margin-bottom: 10px;
+}
+.chat-entry p {
+    margin: 0;
+}
+.user-entry {
+    text-align: right;
+    color: blue;
+}
+.bot-entry {
+    text-align: left;
+    color: green;
+}
+
+#question-form {
+    margin-top: 20px;
+}
+
+#question-form #question {
+    width: 530px;
+}

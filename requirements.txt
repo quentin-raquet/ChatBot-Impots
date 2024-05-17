@@ -1,0 +1,16 @@
+langchain
+langchain-community
+langchainhub
+langchain-chroma
+langchain_mistralai
+pypdf
+sentence_transformers
+flask
+flask-cors
+
+# Problem with Chroma
+# RuntimeError: Your system has an unsupported version of sqlite3. Chroma requires sqlite3 >= 3.35.0.
+# Copy this in .venv/lib/python3.8/site-packages/chromadb/__init__.py
+# __import__('pysqlite3')
+# import sys
+# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')

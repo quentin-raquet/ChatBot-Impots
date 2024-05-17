@@ -1,0 +1,28 @@
+data_folder: data
+emb_model_id: mistral-embed
+llm_model_id: open-mixtral-8x22b
+chunk_size: 1000
+chunk_overlap: 100
+persist_directory: ./chroma_db
+collection_name: mistral_collection
+temperature: 0.1
+max_tokens: 500
+k: 3
+template: > 
+  Utilisez les éléments de contexte suivants pour répondre en Français 
+  à la question à la fin. Si vous ne connaissez pas la réponse, dites simplement 
+  que vous ne savez pas, n'essayez pas d'inventer une réponse. Utilisez au maximum 
+  trois phrases et gardez la réponse aussi concise que possible.
+
+  {context}
+
+  Question: {question}
+
+data_urls:
+- https://www.impots.gouv.fr/sites/default/files/formulaires/2042/2024/2042_4757.pdf
+- https://www.impots.gouv.fr/sites/default/files/formulaires/2042/2024/2042_4825.pdf
+- https://www.impots.gouv.fr/sites/default/files/formulaires/2042/2024/2042_4752.pdf
+- https://www.impots.gouv.fr/sites/default/files/formulaires/2042/2024/2042_4754.pdf
+- https://www.impots.gouv.fr/sites/default/files/formulaires/2042/2024/2042_4753.pdf
+- https://www.impots.gouv.fr/sites/default/files/formulaires/2042/2024/2042_4755.pdf
+- https://www.impots.gouv.fr/sites/default/files/formulaires/2042/2024/2042_4756.pdf

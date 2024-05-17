@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatBot Déclaration d'impôts</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>ChatBot Déclaration d'impôts</h1>
+    <div id="chat-container"></div>
+    <form id="question-form">
+        <input type="text" id="question" name="question" placeholder="Taper votre question ici...">
+        <input type="submit" value="Demander">
+    </form>
+
+    <script>
+        document.getElementById('question-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var question = document.getElementById('question').value;
+            var chatContainer = document.getElementById('chat-container');
+            var userEntry = document.createElement('div');
+            userEntry.className = 'chat-entry user-entry';
+            userEntry.innerHTML = '<p>' + question + '</p>';
+            chatContainer.appendChild(userEntry);
+            fetch('http://localhost:5000/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({question: question}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                var botEntry = document.createElement('div');
+                botEntry.className = 'chat-entry bot-entry';
+                botEntry.innerHTML = '<p>' + data.answer + '</p>';
+                chatContainer.appendChild(botEntry);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

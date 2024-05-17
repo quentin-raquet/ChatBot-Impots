@@ -1,0 +1,23 @@
+# .gitignore
+
+# Ignore Python build artifacts
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.pyz
+*.pyzw
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore SQLite databases
+*.sqlite3
+
+# Ignore data directory
+data/
+
+# Ignore virtual environment
+.venv/
+
+chroma_db/
