@@ -2,6 +2,8 @@
 
 This project is a Chatbot that uses the Mistral AI model to answer questions about French taxes. It uses a combination of the LangChain library, the Mistral AI model, and the Chroma vector store to process and answer questions.
 
+<img src="static/Capture.JPG" alt="Image Capture" width="500">
+
 ## Example
 
 Question: "Comment dois-je déclarer des gains issus du Bitcoin ?"

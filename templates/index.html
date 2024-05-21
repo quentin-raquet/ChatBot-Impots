@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>ChatBot Déclaration d'impôts</title>
+    <title>ChatBot impot.gouv</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+
 <body>
-    <h1>ChatBot Déclaration d'impôts</h1>
+    <h1>ChatBot impot.gouv</h1>
     <div id="chat-container"></div>
     <form id="question-form">
         <input type="text" id="question" name="question" placeholder="Taper votre question ici...">
-        <input type="submit" value="Demander">
+        <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+        </button>
     </form>
 
     <script>
-        document.getElementById('question-form').addEventListener('submit', function(event) {
+        document.getElementById('question-form').addEventListener('submit', function (event) {
             event.preventDefault();
             var question = document.getElementById('question').value;
             var chatContainer = document.getElementById('chat-container');
@@ -26,20 +37,21 @@
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({question: question}),
+                body: JSON.stringify({ question: question }),
             })
-            .then(response => response.json())
-            .then(data => {
-                var botEntry = document.createElement('div');
-                botEntry.className = 'chat-entry bot-entry';
-                botEntry.innerHTML = '<p>' + data.answer + '</p>';
-                chatContainer.appendChild(botEntry);
-                chatContainer.scrollTop = chatContainer.scrollHeight;
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                .then(response => response.json())
+                .then(data => {
+                    var botEntry = document.createElement('div');
+                    botEntry.className = 'chat-entry bot-entry';
+                    botEntry.innerHTML = '<p>' + data.answer + '</p>';
+                    chatContainer.appendChild(botEntry);
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
         });
     </script>
 </body>
+
 </html>

@@ -1,32 +1,81 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
 }
+
 #chat-container {
     width: 600px;
     height: 400px;
-    border: 1px solid #ccc;
-    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     overflow-y: auto;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 50px;
 }
+
 .chat-entry {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
+
 .chat-entry p {
     margin: 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
 }
+
 .user-entry {
-    text-align: right;
-    color: blue;
+    align-items: flex-end;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #007bff;
 }
+
 .bot-entry {
-    text-align: left;
-    color: green;
+    align-items: flex-start;
+    color: #000;
+    border-radius: 10px;
+    background-color: #e9ecef;
 }
 
 #question-form {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 #question-form #question {
-    width: 530px;
+    width: 576px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+#question-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#question-form button:hover {
+    background-color: #0056b3;
+}
+
+#question-form svg {
+    transform: rotate(180deg);
 }
