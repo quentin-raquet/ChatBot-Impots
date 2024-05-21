@@ -20,14 +20,8 @@ Chatbot answer with RAG: "Vous devez déclarer les bénéfices issus d'une locat
 Chatbot answer without RAG: "Les bénéfices issus d'une location meublée non professionnelle doivent être déclarés dans la catégorie des bénéfices industriels et commerciaux (BIC). Plus précisément, ils doivent être déclarés dans la section "régime réel" ou "micro-BIC" de la déclaration de revenus, en fonction du montant des recettes locatives."
 
 
-## Setup
-
-1. Clone the repository to your local machine.
-2. Install the required Python packages by running `conda env create -f environment.yml` or `pip install -r requirements.txt` in your terminal.
-3. Make sure you have the correct version of SQLite3 installed. If not, follow the instructions in the `requirements.txt` file to fix the issue.
-4. Update the `config.yml` file with your specific configuration.
-
 ## Running the Project
 
-1. Start the Flask server by running `python app.py` in your terminal.
-2. Open your web browser and navigate to `http://localhost:5000` to interact with the chatbot.
+1. Make sure to save your `MISTRAL_API_KEY` in your env vars: `export MISTRAL_API_KEY="your_mistral_API_key"`
+2. Build the docker image with: `docker build -t chatbotimpots:latest .`
+3. Run the docker with `docker run --rm -it -e MISTRAL_API_KEY=$MISTRAL_API_KEY -p 5000:5000/tcp chatbotimpots:latest` Open your web browser and navigate to `http://localhost:5000` to interact with the chatbot.
