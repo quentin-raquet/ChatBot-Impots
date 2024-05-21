@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>ChatBot Déclaration d'impôts</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>ChatBot Déclaration d'impôts</h1>
@@ -21,7 +21,7 @@
             userEntry.className = 'chat-entry user-entry';
             userEntry.innerHTML = '<p>' + question + '</p>';
             chatContainer.appendChild(userEntry);
-            fetch('http://localhost:5000/ask', {
+            fetch('/ask', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

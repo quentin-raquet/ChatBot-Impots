@@ -21,11 +21,11 @@ Chatbot answer without RAG: "Les bénéfices issus d'une location meublée non p
 ## Setup
 
 1. Clone the repository to your local machine.
-2. Install the required Python packages by running `pip install -r requirements.txt` in your terminal.
+2. Install the required Python packages by running `conda env create -f environment.yml` or `pip install -r requirements.txt` in your terminal.
 3. Make sure you have the correct version of SQLite3 installed. If not, follow the instructions in the `requirements.txt` file to fix the issue.
 4. Update the `config.yml` file with your specific configuration.
 
 ## Running the Project
 
 1. Start the Flask server by running `python app.py` in your terminal.
-2. Run the live server on index.html and navigate to `http://localhost:5500` to interact with the chatbot.
+2. Open your web browser and navigate to `http://localhost:5000` to interact with the chatbot.

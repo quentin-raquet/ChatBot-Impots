@@ -1,5 +1,6 @@
 import yaml
 from flask import Flask, request, jsonify
+from flask import render_template
 from flask_cors import CORS
 from src.RAG import build_rag
 from src.vectorstore import build_vectorstore
@@ -15,6 +16,9 @@ with open("config.yml", "r") as f:
 build_vectorstore(config)
 rag_chain = build_rag(config)
 
+@app.route("/")
+def main():
+   return render_template("index.html")
 
 @app.route("/ask", methods=["POST"])
 def ask():
@@ -28,4 +32,4 @@ def ask():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=5000)
