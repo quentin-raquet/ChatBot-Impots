@@ -1,4 +1,4 @@
-# Mistral AI Chatbot
+# Chatbot déclaration d'impôts
 
 This project is a Chatbot that uses the Mistral AI model to answer questions about French taxes. It uses a combination of the LangChain library, the Mistral AI model, and the Chroma vector store to process and answer questions.
 
@@ -20,26 +20,12 @@ Chatbot answer without RAG: "Les bénéfices issus d'une location meublée non p
 
 ## Setup
 
-To set up the project, you need to install the required Python packages listed in the [requirements.txt](requirements.txt) file. You can do this by running:
+1. Clone the repository to your local machine.
+2. Install the required Python packages by running `pip install -r requirements.txt` in your terminal.
+3. Make sure you have the correct version of SQLite3 installed. If not, follow the instructions in the `requirements.txt` file to fix the issue.
+4. Update the `config.yml` file with your specific configuration.
 
-```sh
-pip install -r requirements.txt
-```
+## Running the Project
 
-## Build VectorStore
-You need to build the vectorstore before using the ChatBot. This program build a sqlite database with 
-vectors corresponding to extracts of PDF files.
-
-
-```sh
-python build_vectorstore.py
-```
-
-
-## Running the Chatbot
-To run the Chatbot, you need to execute the main function in the run_chatbot.py file with the configuration dictionary as an argument. The configuration dictionary should be loaded from the config.yml file.
-
-
-```sh
-python run_chatbot.py
-```
+1. Start the Flask server by running `python app.py` in your terminal.
+2. Run the live server on index.html and navigate to `http://localhost:5500` to interact with the chatbot.
